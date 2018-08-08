@@ -1,0 +1,30 @@
+<!--components/epsoide/index.wxml-->
+<!-- <view class='container'>
+  <text>No.</text>
+  <text>{{newIndex._index(index)}}</text>
+  <text>|</text>
+  <text>{{mouth}}</text>
+  <text>{{year}}</text>
+</view> -->
+
+<view class='container'>
+  <view class='index-container'>
+    <text class='plain'>No.</text>
+    <text class='index'>{{newIndex._index(index)}}</text>
+    <view class='line'></view>
+  </view>
+  <view class='date-container'>
+    <text class='month'>{{month}}</text>
+    <text class='year'>{{year}}</text>
+  </view>
+</view>
+
+<!-- 第二种方法 -->
+<wxs module="newIndex">
+  var _index = function(index) {
+    var idx = index < 10 ? 0+index : index
+    return idx;
+  }
+
+  module.exports._index = _index;
+</wxs>
